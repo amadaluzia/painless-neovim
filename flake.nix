@@ -40,6 +40,7 @@
                 };
                 binds.whichKey.enable = true;
                 filetree.nvimTree.enable = true;
+                treesitter.enable = true;
                 git = {
                   enable = true;
                   gitsigns.enable = true;
