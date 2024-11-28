@@ -1,22 +1,24 @@
 {pkgs, ...}: {
   config.vim = {
-    theme = {
-      enable = true;
-      name = "rose-pine";
-      style = "main";
-    };
     extraPlugins = {
       mini-statusline = {
         package = pkgs.vimPlugins.mini-nvim;
         setup = "require('mini.statusline').setup {}";
       };
     };
-    binds.whichKey.enable = true;
-    filetree.nvimTree.enable = true;
-    treesitter.enable = true;
+    theme = {
+      enable = true;
+      name = "tokyonight";
+      style = "night";
+    };
+    terminal.toggleterm = {
+      enable = true;
+      lazygit.enable = true;
+    };
     git = {
       enable = true;
       gitsigns.enable = true;
+      gitsigns.codeActions.enable = true;
       vim-fugitive.enable = true;
     };
     lsp = {
@@ -36,8 +38,9 @@
     };
     visuals = {
       indent-blankline.enable = true;
+      nvim-web-devicons.enable = true;
+      fidget-nvim.enable = true;
     };
-    viAlias = true;
     maps = {
       normal = {
         ":" = {
@@ -50,5 +53,21 @@
         };
       };
     };
+    notes = {
+      orgmode.enable = true;
+      todo-comments.enable = true;
+    };
+    ui.noice.enable = true;
+    binds.whichKey.enable = true;
+    filetree.nvimTree.enable = true;
+    treesitter.context.enable = true;
+    notify.nvim-notify.enable = true;
+    comments.comment-nvim.enable = true;
+    autocomplete.nvim-cmp.enable = true;
+    projects.project-nvim.enable = true;
+    telescope.enable = true;
+    treesitter.enable = true;
+    viAlias = true;
+    vimAlias = true;
   };
 }
