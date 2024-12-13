@@ -5,10 +5,13 @@
         package = pkgs.vimPlugins.mini-nvim;
         setup = "require('mini.statusline').setup {}";
       };
+      nightfox = {
+        package = pkgs.vimPlugins.nightfox-nvim;
+        setup = "vim.cmd('colorscheme carbonfox')";
+      };
     };
     theme = {
       enable = true;
-      name = "gruvbox";
       style = "dark";
     };
     terminal.toggleterm = {
