@@ -35,6 +35,7 @@
       nix.enable = true;
       lua.enable = true;
       ts.enable = true;
+      go.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
