@@ -1,12 +1,14 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  inherit (pkgs) vimPlugins;
+in {
   config.vim = {
     extraPlugins = {
       mini-statusline = {
-        package = pkgs.vimPlugins.mini-nvim;
+        package = vimPlugins.mini-nvim;
         setup = "require('mini.statusline').setup {}";
       };
       nightfox = {
-        package = pkgs.vimPlugins.nightfox-nvim;
+        package = vimPlugins.nightfox-nvim;
         setup = "vim.cmd('colorscheme carbonfox')";
       };
     };
@@ -30,11 +32,21 @@
       lspSignature.enable = true;
       lsplines.enable = true;
       lspsaga.enable = true;
+      otter-nvim.enable = true;
+      nvim-docs-view.enable = true;
+      trouble.enable = true;
+      null-ls.enable = true;
+    };
+    debugger.nvim-dap = {
+      enable = true;
+      ui.enable = true;
     };
     languages = {
       enableFormat = true;
       enableLSP = true;
+      enableDAP = true;
       enableTreesitter = true;
+      enableExtraDiagnostics = true;
       nix.enable = true;
       lua.enable = true;
       ts.enable = true;
@@ -45,30 +57,63 @@
       nvim-web-devicons.enable = true;
       fidget-nvim.enable = true;
     };
-    maps = {
-      normal = {
-        ":" = {
-          silent = true;
-          action = "q:";
-        };
-        "<leader>:" = {
-          silent = true;
-          action = ":";
-        };
-      };
-    };
     notes = {
       orgmode.enable = true;
       todo-comments.enable = true;
     };
-    ui.noice.enable = true;
+    ui = {
+      borders = {
+        enable = true;
+        globalStyle = "single";
+      };
+      noice.enable = true;
+      colorizer.enable = true;
+      illuminate.enable = true;
+      breadcrumbs = {
+        enable = true;
+        navbuddy.enable = true;
+      };
+      smartcolumn = {
+        enable = true;
+        setupOpts.custom_colorcolumn = {
+          nix = "110";
+          ruby = "120";
+          java = "130";
+          go = ["90" "130"];
+        };
+      };
+      fastaction.enable = true;
+    };
+    keymaps = [
+      {
+        key = ":";
+        mode = "n";
+        silent = true;
+        action = "q:";
+      }
+      {
+        key = "\\";
+        mode = "n";
+        silent = true;
+        action = ":";
+      }
+    ];
+    treesitter = {
+      fold = true;
+      indent.enable = true;
+      context.enable = true;
+      highlight.enable = true;
+      incrementalSelection.enable = true;
+    };
+    dashboard.alpha.enable = true;
     binds.whichKey.enable = true;
-    filetree.nvimTree.enable = true;
-    treesitter.context.enable = true;
+    filetree.neo-tree.enable = true;
     notify.nvim-notify.enable = true;
     comments.comment-nvim.enable = true;
     autocomplete.nvim-cmp.enable = true;
+    snippets.luasnip.enable = true;
     projects.project-nvim.enable = true;
+    spellcheck.enable = true;
     telescope.enable = true;
     treesitter.enable = true;
     viAlias = true;
