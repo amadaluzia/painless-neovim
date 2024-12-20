@@ -51,6 +51,7 @@ in {
       lua.enable = true;
       ts.enable = true;
       go.enable = true;
+      haskell.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
