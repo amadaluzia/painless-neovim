@@ -10,7 +10,6 @@
       type = "github";
       owner = "NotAShelf";
       repo = "nvf";
-      ref = "v0.7";
     };
   };
   outputs = inputs @ {nixpkgs, ...}: let
