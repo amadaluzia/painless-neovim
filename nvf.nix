@@ -52,6 +52,7 @@ in {
       ts.enable = true;
       go.enable = true;
       haskell.enable = true;
+      python.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
