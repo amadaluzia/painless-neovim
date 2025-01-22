@@ -53,6 +53,7 @@ in {
       go.enable = true;
       haskell.enable = true;
       python.enable = true;
+      rust.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
