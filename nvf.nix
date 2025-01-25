@@ -7,12 +7,13 @@ in {
         package = vimPlugins.mini-nvim;
         setup = "require('mini.statusline').setup {}";
       };
-      nightfox = {
-        package = vimPlugins.nightfox-nvim;
-        setup = "vim.cmd('colorscheme carbonfox')";
-      };
+      # nightfox = {
+      #   package = vimPlugins.nightfox-nvim;
+      #   setup = "vim.cmd('colorscheme carbonfox')";
+      # };
     };
     theme = {
+      name = "nord";
       enable = true;
       style = "dark";
     };
