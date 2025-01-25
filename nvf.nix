@@ -102,11 +102,13 @@ in {
       }
     ];
     treesitter = {
+      enable = true;
       fold = true;
       indent.enable = true;
       context.enable = true;
       highlight.enable = true;
       incrementalSelection.enable = true;
+      grammars = [pkgs.tree-sitter-grammars.tree-sitter-nu];
     };
     dashboard.alpha.enable = true;
     binds.whichKey.enable = true;
@@ -118,7 +120,6 @@ in {
     projects.project-nvim.enable = true;
     spellcheck.enable = true;
     telescope.enable = true;
-    treesitter.enable = true;
     viAlias = true;
     vimAlias = true;
   };
