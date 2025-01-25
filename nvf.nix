@@ -54,6 +54,7 @@ in {
       haskell.enable = true;
       python.enable = true;
       rust.enable = true;
+      zig.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
