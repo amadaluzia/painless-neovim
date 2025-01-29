@@ -56,6 +56,7 @@ in {
       python.enable = true;
       rust.enable = true;
       zig.enable = true;
+      nu.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
@@ -110,7 +111,6 @@ in {
       context.enable = true;
       highlight.enable = true;
       incrementalSelection.enable = true;
-      grammars = [pkgs.tree-sitter-grammars.tree-sitter-nu];
     };
     dashboard.alpha.enable = true;
     binds.whichKey.enable = true;
