@@ -7,11 +7,10 @@ in {
         package = vimPlugins.mini-nvim;
         setup = "require('mini.statusline').setup {}";
       };
-      # nightfox = {
-      #   package = vimPlugins.nightfox-nvim;
-      #   setup = "vim.cmd('colorscheme carbonfox')";
-      # };
     };
+    extraLuaFiles = [
+      ./neovide.lua
+    ];
     theme = {
       name = "nord";
       enable = true;
