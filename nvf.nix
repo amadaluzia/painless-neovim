@@ -43,7 +43,7 @@ in {
     languages = {
       enableFormat = true;
       enableLSP = true;
-      enableDAP = true;
+      enableDAP = false;
       enableTreesitter = true;
       enableExtraDiagnostics = true;
       nix.enable = true;
@@ -51,10 +51,21 @@ in {
       ts.enable = true;
       go.enable = true;
       haskell.enable = true;
-      python.enable = true;
+      python = {
+        enable = true;
+        format = {
+          type = "ruff";
+          package = pkgs.ruff;
+        };
+        lsp = {
+          package = pkgs.pyright;
+          server = "pyright";
+        };
+      };
       rust.enable = true;
       zig.enable = true;
       nu.enable = true;
+      nim.enable = true;
     };
     visuals = {
       indent-blankline.enable = true;
