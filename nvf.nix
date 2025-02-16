@@ -121,9 +121,26 @@ in {
       highlight.enable = true;
       incrementalSelection.enable = true;
     };
+    filetree.nvimTree = {
+      enable = true;
+      openOnSetup = true;
+      setupOpts = {
+        disable_netrw = true;
+        filters = {
+          git_ignored = true;
+        };
+        git = {
+          enable = true;
+        };
+        view = {
+          relativenumber = true;
+          side = "right";
+          float.enable = true;
+        };
+      };
+    };
     dashboard.alpha.enable = true;
     binds.whichKey.enable = true;
-    filetree.neo-tree.enable = true;
     notify.nvim-notify.enable = true;
     comments.comment-nvim.enable = true;
     autocomplete.nvim-cmp.enable = true;
