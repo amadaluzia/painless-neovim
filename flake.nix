@@ -11,6 +11,11 @@
       owner = "NotAShelf";
       repo = "nvf";
     };
+    basix = {
+      type = "github";
+      owner = "NotAShelf";
+      repo = "Basix";
+    };
   };
   outputs = inputs @ {nixpkgs, ...}: let
     systems = ["x86_64-linux"];
@@ -27,6 +32,7 @@
             ./nvf.nix
           ];
           inherit pkgs;
+          extraSpecialArgs = {inherit inputs;};
         })
         .neovim;
     });

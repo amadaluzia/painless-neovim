@@ -12,9 +12,9 @@ in {
       ./neovide.lua
     ];
     theme = {
-      name = "nord";
+      name = "mini-base16";
       enable = true;
-      style = "dark";
+      base16-colors = builtins.fromJSON (builtins.readFile ./everforest.json);
     };
     terminal.toggleterm = {
       enable = true;
