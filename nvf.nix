@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  pkgs,
+  colors,
+  ...
+}: let
   inherit (pkgs) vimPlugins;
 in {
   config.vim = {
@@ -14,7 +18,7 @@ in {
     theme = {
       name = "mini-base16";
       enable = true;
-      base16-colors = builtins.fromJSON (builtins.readFile ./everforest.json);
+      base16-colors = colors;
     };
     terminal.toggleterm = {
       enable = true;

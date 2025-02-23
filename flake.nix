@@ -32,7 +32,7 @@
             ./nvf.nix
           ];
           inherit pkgs;
-          extraSpecialArgs = {inherit inputs;};
+          extraSpecialArgs = {colors = inputs.basix.schemeData.base16.everforest-dark-hard.palette;};
         })
         .neovim;
     });
